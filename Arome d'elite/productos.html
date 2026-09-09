@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arome d'elite - Productos</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script>
+    var total_carrito = 0;
+ 
+    function agregar_carrito(nombre, precio) {
+      console.log("-- funcion agregar_carrito --");
+      total_carrito = total_carrito + precio;
+ 
+      var contador = document.getElementById("contador_carrito");
+      contador.innerHTML = "Carrito: $" + total_carrito;
+ 
+      var mensaje = document.getElementById("mensaje_carrito");
+      mensaje.innerHTML = nombre + " agregado al carrito.";
+    }
+  </script>
+</head>
+<body>
+ 
+  <header>
+    <h1>Arome d'elite</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <p id="contador_carrito">Carrito: $0</p>
+  </header>
+ 
+  <main>
+    <p id="mensaje_carrito"></p>
+ 
+    <section id="Masculinos">
+      <h2>Perfumes Masculinos</h2>
+ 
+      <article>
+        <img src="https://imgs.search.brave.com/8dcFHXEQYiEPBbmya4QF7yOIvi3UNOaa3EVQ5AQ_3d8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ZiLzc2/LzNjL2ZiNzYzYzZm/YmVhZWFkMDVhZjZh/ZmZiMzI0MDVlYjQ5/LmpwZw" alt="Sauvage Dior">
+        <h3>Sauvage - Dior</h3>
+        <p class="precio">$89.990</p>
+        <button type="button" onclick="agregar_carrito('Sauvage - Dior', 89990)">Agregar al carrito</button>
+      </article>
+ 
+      <article>
+        <img src="https://imgs.search.brave.com/wxnfrsLA4X1MDTOEy5MXbUIcaSIiio5IuBd0FSvUoGg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9taXIt/czMtY2RuLWNmLmJl/aGFuY2UubmV0L3By/b2plY3RfbW9kdWxl/cy9mcy85YjE4MDcz/NjgxMzQ5My41NzJh/MjQxZDk0MTYyLmpw/Zw" alt="Bleu de Chanel">
+        <h3>Bleu de Chanel</h3>
+        <p class="precio">$95.990</p>
+        <button type="button" onclick="agregar_carrito('Bleu de Chanel', 95990)">Agregar al carrito</button>
+      </article>
+    </section>
+ 
+    <section id="Femeninos">
+      <h2>Perfumes Femeninos</h2>
+ 
+      <article>
+        <img src="https://imgs.search.brave.com/r96K3bD6ZGziEsgPOVGlO2oGm-hzFDIgOGXoOkS15b8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE3/Njk2NzEzMjcxNDct/YmI0OWJjNDVlOWY2/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZhdXRv/PWZvcm1hdCZmaXQ9/Y3JvcCZpeGxpYj1y/Yi00LjEuMCZpeGlk/PU0zd3hNakEzZkRC/OE1IeHpaV0Z5WTJo/OE1UUjhmR05vWVc1/bGJDVXlNRzV2TGpW/OFpXNThNSHg4TUh4/OGZEQT0" alt="Chanel N5">
+        <h3>Chanel N°5</h3>
+        <p class="precio">$99.990</p>
+        <button type="button" onclick="agregar_carrito('Chanel N°5', 99990)">Agregar al carrito</button>
+      </article>
+ 
+      <article>
+        <img src="https://imgs.search.brave.com/oFo2vldtudnUnwqw5l7DsIAfX7E9JXe8B1eifmqk_es/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGFuY29tZS5jby51/ay9vbi9kZW1hbmR3/YXJlLnN0YXRpYy8t/L1NpdGVzLWxhbmNv/bWUtZW1lYS13ZXN0/LW5nLUxpYnJhcnkv/ZGVmYXVsdC9kd2Qz/MTQxYTMxL2ltYWdl/cy9wZHAvMDAwMjct/TEFDL2xhYy1sYS12/aWUtZXN0LWJlbGxl/LWVhdS1kZS1wYXJm/dW0tMTAwbWwtMzYx/NDI3Mzc0OTM4MV9U/T1BfMDIuanBn" alt="La Vie Est Belle">
+        <h3>La Vie Est Belle - Lancôme</h3>
+        <p class="precio">$92.990</p>
+        <button type="button" onclick="agregar_carrito('La Vie Est Belle', 92990)">Agregar al carrito</button>
+      </article>
+    </section>
+ 
+    <section id="Unisex">
+      <h2>Perfumes Unisex</h2>
+ 
+      <article>
+        <img src="https://imgs.search.brave.com/8YKQc83a3d__Uo5kWUbRZGL_7foC9ZiKy8bIw2z_giQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGVyZnVtZS1lbXBp/cmUuY29tL2Nkbi9z/aG9wL2ZpbGVzL1Vu/dGl0bGVkX2Rlc2ln/bl8xN18yM2Q4NTg3/Yy1iNDEzLTRmMjAt/OWEyMS02ODQ1YWZj/MDM4ZTcuanBnP3Y9/MTc1OTUxMTQ0OCZ3/aWR0aD0yMDQ4" alt="CK One">
+        <h3>CK One - Calvin Klein</h3>
+        <p class="precio">$64.990</p>
+        <button type="button" onclick="agregar_carrito('CK One', 64990)">Agregar al carrito</button>
+      </article>
+    </section>
+  </main>
+ 
+  <footer>
+    <p>Arome d'elite - Todos los derechos reservados</p>
+    <p>Síguenos: <a href="https://instagram.com/arome.d.elite" target="_blank">Instagram</a> |
+       <a href="mailto:contacto.aromedelite@gmail.com">Gmail</a></p>
+  </footer>
+ 
+</body>
+</html>

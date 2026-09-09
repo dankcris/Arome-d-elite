@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arome d'elite - Contacto</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script>
+    function procesar() {
+      console.log("-- funcion procesar --");
+      limpiar_errores();
+ 
+      const formulario = document.getElementById("form_contacto");
+      const datos_formulario = new FormData(formulario);
+ 
+      var nombre = datos_formulario.get("campo_nombre");
+      var correo = datos_formulario.get("campo_correo");
+      var mensaje = datos_formulario.get("campo_mensaje");
+ 
+      var hay_error = false;
+ 
+      if (!validar_texto(nombre)) {
+        document.getElementById("mensaje_nombre").innerHTML = "Debe ingresar su nombre";
+        hay_error = true;
+      }
+ 
+      if (!validar_correo(correo)) {
+        document.getElementById("mensaje_correo").innerHTML = "Debe ingresar un correo válido";
+        hay_error = true;
+      }
+ 
+      if (!validar_texto(mensaje)) {
+        document.getElementById("mensaje_mensaje").innerHTML = "Debe escribir un mensaje";
+        hay_error = true;
+      }
+ 
+      if (hay_error) {
+        return;
+      }
+ 
+      var caja_resultado = document.getElementById("resultado");
+      caja_resultado.innerHTML = "Gracias " + nombre + ", tu mensaje fue enviado correctamente.";
+      formulario.reset();
+    }
+ 
+    function limpiar_errores() {
+      const cajas_errores = document.getElementsByClassName("error");
+      for (const elemento of cajas_errores) {
+        elemento.innerHTML = "";
+      }
+      document.getElementById("resultado").innerHTML = "";
+    }
+ 
+    function validar_texto(valor) {
+      if (valor.trim().length == 0) {
+        return false;
+      }
+      return true;
+    }
+ 
+    function validar_correo(valor) {
+      if (valor.trim().length == 0) {
+        return false;
+      }
+ 
+      var patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return patron.test(valor);
+    }
+  </script>
+</head>
+<body>
+ 
+  <header>
+    <h1>Arome d'elite</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <section id="video">
+      <h2>Conoce una reseña de nuestros productos a traves del perfumista Andres perfume</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/n20ihQY4P2E"
+        title="Video promocional Arome d'elite" frameborder="0" allowfullscreen></iframe>
+    </section>
+ 
+    <section id="formulario">
+      <h2>Contáctanos</h2>
+      <div id="contenedor_formulario">
+        <form id="form_contacto">
+          <fieldset>
+            <legend>Formulario de contacto</legend>
+ 
+            <label for="campo_nombre">Nombre:</label>
+            <input type="text" name="campo_nombre" id="campo_nombre">
+            <span class="error" id="mensaje_nombre"></span>
+ 
+            <label for="campo_correo">Correo:</label>
+            <input type="text" name="campo_correo" id="campo_correo">
+            <span class="error" id="mensaje_correo"></span>
+ 
+            <label for="campo_mensaje">Mensaje:</label>
+            <textarea name="campo_mensaje" id="campo_mensaje" rows="4"></textarea>
+            <span class="error" id="mensaje_mensaje"></span>
+ 
+            <br><br>
+            <button type="reset" onclick="limpiar_errores()">Limpiar</button>
+            <button type="button" onclick="procesar()">Enviar</button>
+ 
+            <p id="resultado" style="font-weight: bold; margin-top: 20px;"></p>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+ 
+  <footer>
+    <p>Arome d'elite - Todos los derechos reservados</p>
+    <p>Síguenos: <a href="https://instagram.com/arome.d.elite" target="_blank">Instagram</a> |
+       <a href="mailto:contacto.aromedelite@gmail.com">Gmail</a></p>
+  </footer>
+ 
+</body>
+</html>
