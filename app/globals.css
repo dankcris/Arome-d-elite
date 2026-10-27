@@ -1,0 +1,33 @@
+:root {
+  --arome-azul: #2b5faa;
+  --arome-azul-oscuro: #1c3f75;
+  --arome-fondo: #d6e6f5;
+}
+
+body {
+  background-color: var(--arome-fondo);
+  color: #333333;
+}
+
+.navbar-arome {
+  background-color: var(--arome-azul);
+  border-bottom: 3px solid var(--arome-azul-oscuro);
+}
+
+.navbar-arome .navbar-brand {
+  font-family: Georgia, serif;
+}
+
+.contenido {
+  background-color: #ffffff;
+  border: 1px solid #a9c3e0;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+}
+
+.img-producto {
+  height: 220px;
+  object-fit: contain;
+  padding: 0.5rem;
+}
